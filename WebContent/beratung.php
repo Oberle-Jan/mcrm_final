@@ -1,4 +1,3 @@
-hurensohn
 <!-- Login Status überprüfen, Wenn nicht eingeloggt, dann Weiterleitung zur LogIn-Ansicht -->
 <?php include 'php/loginstatus.php'?>
 <?php include 'navigation.php';?>
@@ -122,9 +121,9 @@ hurensohn
 				</div>
 			</form>
 		</div>
-		</div>
-		
-		
+	</div>
+
+
 
 </body>
 </html>
