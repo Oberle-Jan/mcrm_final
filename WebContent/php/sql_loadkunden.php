@@ -17,18 +17,17 @@ $sql = "SELECT * From kunde WHERE kunde_inStore = 1 ORDER BY kundenklasse_Kunden
 # Durchführen des SQL befehls und speichern des Ergenisses in $res
 $res = mysql_query($sql);
 
-/*
+/* 
 // name des favorisierten verkäufers
-$sql2 = "SELECT verkäufer.Vorname AS `vkVname`, verkäufer.Nachname AS `vkNname` FROM verkäufer where verkäufer.Mitarbeiternummer in ( SELECT verkäufer_Mitarbeiternummer From verkäuferzukunde WHERE kunde_Kundennummer ='$knr')";
+$sql2 = "SELECT verkäufer.Vorname AS `vkVname`, verkäufer.Nachname AS `vkNname` FROM verkäufer where verkäufer.Mitarbeiternummer in ( SELECT verkäufer_Mitarbeiternummer From verkäuferzukunde ORDER BY kunde_Kundennummer ASC)";
 $res2 = mysql_query ( $sql2 );
 // Erstellen des Arrays reply mit den Kunden-Objekten aus der Datenbank
 $row2 = mysql_fetch_assoc ( $res2 );
 */
 
 # Erstellen des Arrays reply mit den Kunden-Objekten aus der Datenbank
-while ($row = mysql_fetch_assoc($res)) {
-		$reply[]=$row;
-	
+while ($row = mysql_fetch_assoc($res) /*AND $row2 = mysql_fetch_array($res2)*/) {
+		$reply[]=$row;	//+row2
 }
 
 

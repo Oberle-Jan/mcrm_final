@@ -5,9 +5,9 @@
 				type : "POST",
 				url : "php/sql_loadkunden.php",
 				dataType : "json",
-			
+
 				success : function(data) {
-				
+
 					for (var i = 0; i < data.length; i++) {
 
 						var div = '<div class="row kundenliste"><div class="col-xs-2"> <img src="'
@@ -34,13 +34,18 @@
 
 })();
 
+/*ggf noch einbauen wenn Johannes den sql hinbekommt
+ * <div class="row"><div class="col-xs-2 col-xs-offset-1">Stammverk&auml;ufer:
+ * </div><div class="col-xs-5"> ' + data[i].vkVname + ' ' + data[i].vkNname + '</div></div>
+ */
+
 // weitergabe der Kundennummer an Beratungsansicht via Buttonclick
-// Falls bereits ein Beratungsgespräch im Gange ist kommt ein Popup, dass man 
+// Falls bereits ein Beratungsgespräch im Gange ist kommt ein Popup, dass man
 // dieses beenden muss
 function kundenAnnehmen(knr) {
-	if (typeof zuknr ==='undefined'){
+	if (typeof zuknr === 'undefined') {
 		window.location = "beratung.php?id1=" + knr;
-	}else{
+	} else {
 		event.preventDefault();
 		alert("Sie betreuen bereits einen Kunden, bitte schließen sie die Beratung erst ab!");
 	}
