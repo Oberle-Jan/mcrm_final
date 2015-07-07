@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`konzern` (
   `Name` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`idKonzern`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`filiale` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 CREATE INDEX `fk_filiale_konzern1_idx` ON `mCRM_Database`.`filiale` (`konzern_idKonzern` ASC);
 
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`abteilung` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 CREATE INDEX `fk_abteilung_filiale1_idx` ON `mCRM_Database`.`abteilung` (`filiale_Filialnummer` ASC);
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`preis` (
   `Preis` DOUBLE NOT NULL,
   PRIMARY KEY (`idPreis`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`artikel` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 CREATE INDEX `fk_artikel_preis_idx` ON `mCRM_Database`.`artikel` (`preis_idPreis` ASC);
 
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`sonderaktionen` (
   `Rabatt` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`Sonderaktionnummer`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`kundenklasse` (
   `Prozentualrabatt` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`Kundenklasse`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -249,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`kunde` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 CREATE INDEX `fk_kunde_sonderaktionen1_idx` ON `mCRM_Database`.`kunde` (`sonderaktionen_Sonderaktionnummer` ASC);
 
@@ -280,7 +280,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`kauf` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 CREATE INDEX `fk_kauf_artikel1_idx` ON `mCRM_Database`.`kauf` (`artikel_Artikelnummer` ASC);
 
@@ -297,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`rolle` (
   `Rolle` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`Rollennummer`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -327,7 +327,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`verkäufer` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 CREATE INDEX `fk_verkäufer_abteilung1_idx` ON `mCRM_Database`.`verkäufer` (`abteilung_Abteilungsnummer` ASC);
 
@@ -341,7 +341,7 @@ DROP TABLE IF EXISTS `mCRM_Database`.`notiz` ;
 
 CREATE TABLE IF NOT EXISTS `mCRM_Database`.`notiz` (
   `idNotiz` INT(11) NOT NULL AUTO_INCREMENT,
-  `Feedback` VARCHAR(45) NULL DEFAULT NULL,
+  `Feedback` VARCHAR(500) NULL DEFAULT NULL,
   `verkäufer_Mitarbeiternummer` INT(11) NOT NULL,
   `kunde_Kundennummer` INT(11) NOT NULL,
   PRIMARY KEY (`idNotiz`),
@@ -356,7 +356,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`notiz` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 CREATE INDEX `fk_notiz_verkäufer1_idx` ON `mCRM_Database`.`notiz` (`verkäufer_Mitarbeiternummer` ASC);
 
@@ -383,7 +383,7 @@ CREATE TABLE IF NOT EXISTS `mCRM_Database`.`verkäuferzukunde` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 CREATE INDEX `fk_verkäuferzukunde_kunde1_idx` ON `mCRM_Database`.`verkäuferzukunde` (`kunde_Kundennummer` ASC);
 

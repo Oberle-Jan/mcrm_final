@@ -10,6 +10,12 @@
 		margin-left: 15px;
 	}
 	
+	#beratungAbschluss{
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	
+		
 	#menuLoginstatus{
 		color: #FFD48E;
 		font-weight: bold;
@@ -24,9 +30,22 @@
 	#kommentare{
 		height: 170px;
 		overflow: scroll;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+	
+	#kommentareingabe{
+		margin-left: 5px;
+		margin-right: 15px;
+		position: relative;
+		top: -15px;
 	}
 	
 	#kunde{
+		height: 200px;
+	}
+	
+	#rabatte{
 		height: 200px;
 	}
 	
@@ -109,7 +128,7 @@
 	
 	#artikelliste{
 		overflow: scroll;
-		height: 400px;
+		height: 300px;
 	}
 	
 	.artikelbild{
@@ -163,6 +182,7 @@
 		padding: 3px;
 		margin: 3px;
 	}	
+	
 	
 	
 	

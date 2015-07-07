@@ -35,6 +35,7 @@
 <body>
 
 	<div class="container">
+		
 		<div class="row" id="top">
 			<div class="col-xs-9">
 				<h1>Beratungsgespr&auml;ch mit:<?php echo " ".$vname." ".$nname;?></h1>
@@ -42,7 +43,7 @@
 			<div class="col-xs-2">
 				<a href="php/beratung_beenden.php">
 					<button type="button" class="btn btn-success btn-block"
-						style="margin-top: 20px; margin-bottom: 20px">Beratung beenden!</button>
+						id="beratungAbschluss">Beratung beenden</button>
 				</a>
 			</div>
 		</div>
@@ -103,14 +104,14 @@
 
 		<div class="row" id="vorschlaege">
 			<div class="col-xs-12">
-				<div class="jumbotron" id="artikelliste" style="height: 300px"></div>
+				<div class="jumbotron" id="artikelliste"></div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="jumbotron" id="kommentare"></div>
 			<form action=php/notiz_anlegen.php method="post">
-				<div class="row topmargin">
+				<div class="row" id="kommentareingabe">
 					<div class="col-xs-8">
 						<input class="form-control input-lg" name="notiz" type="text" />
 					</div>
