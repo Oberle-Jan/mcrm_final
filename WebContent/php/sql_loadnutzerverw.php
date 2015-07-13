@@ -21,7 +21,7 @@ while ($row = mysql_fetch_assoc($res)) {
 
 
 //json_encode funktioniert nicht mit umlauten, hier fehlt noch eine lösung!
-#Das Array via json an die Ladenansicht.js zurückgeben, dort wird das Ergebniss mit Ajax weiterverarbeitet
+#Das Array via json an die liste_nutzerverwaltung.js zurückgeben, dort wird das Ergebniss mit Ajax weiterverarbeitet
 echo json_encode($reply);
 mysql_close ( $link );
 ?>

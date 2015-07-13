@@ -14,15 +14,14 @@ $umsatz = $row ['Durchschnittsumsatz'];
 $prio = $row ['kundenklasse_Kundenklasse'];
 $pic = $row ['Pic'];
 
-
 // name des favorisierten verkäufers
 $sql = "SELECT verkäufer.Vorname, verkäufer.Nachname FROM verkäufer where verkäufer.Mitarbeiternummer in ( SELECT verkäufer_Mitarbeiternummer From verkäuferzukunde WHERE kunde_Kundennummer ='$knr')";
 $res = mysql_query ( $sql );
 // Erstellen des Arrays reply mit den Kunden-Objekten aus der Datenbank
 $row = mysql_fetch_assoc ( $res );
-$favvk=$row ['Vorname']." ".$row['Nachname'];
+$favvk = $row ['Vorname'] . " " . $row ['Nachname'];
 
-if(empty($favvk)){
+if (empty ( $favvk )) {
 	$favvk = 'Bislang keiner!';
 }
 

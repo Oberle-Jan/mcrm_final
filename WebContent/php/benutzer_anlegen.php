@@ -3,7 +3,7 @@
 // Einbinden der Datenbankverbindung
 include 'dbconnect.php';
 
-// Überprüfen ob Login-Daten eingegeben wurden
+// Überprüfen ob User-Daten eingegeben wurden
 if (! empty ( $_POST ["submit"] )) {
 	
 	/*

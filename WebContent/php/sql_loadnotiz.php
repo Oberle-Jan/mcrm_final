@@ -26,7 +26,7 @@ while ( $row = mysql_fetch_assoc ( $res ) ) {
 	$encode[i]=htmlentities($reply[i]);
 	i++;}
 */
-#DAS Array via json an die Ladenansicht.js zurückgeben, dort wird dAS Ergebniss mit Ajax weiterverarbeitet
+#DAS Array via json an die liste_notiz.js zurückgeben, dort wird dAS Ergebniss mit Ajax weiterverarbeitet
 echo json_encode($reply);
 mysql_close ( $link );
 ?>

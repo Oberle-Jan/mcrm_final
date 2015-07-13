@@ -55,7 +55,7 @@ while ($row = mysql_fetch_ASsoc($res)) {
 
 
 //json_encode funktioniert nicht mit umlauten, hier fehlt noch eine lösung!
-#DAS Array via json an die Ladenansicht.js zurückgeben, dort wird dAS Ergebniss mit Ajax weiterverarbeitet
+#DAS Array via json an die liste_artikel.js zurückgeben, dort wird dAS Ergebniss mit Ajax weiterverarbeitet
 echo json_encode($reply);
 mysql_close ( $link );
 ?>

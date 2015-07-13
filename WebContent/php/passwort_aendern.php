@@ -2,7 +2,7 @@
 // Einbinden der Datenbankverbindung
 include 'dbconnect.php';
 
-// Überprüfen ob Login-Daten eingegeben wurden
+// Überprüfen ob Daten eingegeben wurden
 if (! empty ( $_POST ["password"] )) {
 	
 	/*
