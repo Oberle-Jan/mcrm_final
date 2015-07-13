@@ -1,5 +1,6 @@
 (function() {
-
+	//ajax ruft sql_loadkunden auf, welche eine SQL Abfrage macht und die Daten über ein JSON 
+	//Objekt zurück gibt, anschließend werden die divs in einer Schleife erzeugt und angehängt
 	$
 			.ajax({
 				type : "POST",
@@ -34,10 +35,6 @@
 
 })();
 
-/*ggf noch einbauen wenn Johannes den sql hinbekommt
- * <div class="row"><div class="col-xs-2 col-xs-offset-1">Stammverk&auml;ufer:
- * </div><div class="col-xs-5"> ' + data[i].vkVname + ' ' + data[i].vkNname + '</div></div>
- */
 
 // weitergabe der Kundennummer an Beratungsansicht via Buttonclick
 // Falls bereits ein Beratungsgespräch im Gange ist kommt ein Popup, dass man

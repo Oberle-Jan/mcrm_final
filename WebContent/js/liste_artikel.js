@@ -1,5 +1,6 @@
 (function() {
-
+//ajax ruft sql_loadartikel auf, welche eine SQL Abfrage macht und die Daten über ein JSON 
+//Objekt zurück gibt, anschließend werden die divs in einer Schleife erzeugt und angehängt
 	$
 			.ajax({
 				type : "POST",
