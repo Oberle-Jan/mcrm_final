@@ -1,6 +1,8 @@
-(function() {
-	//ajax ruft sql_loadkunden auf, welche eine SQL Abfrage macht und die Daten über ein JSON 
-	//Objekt zurück gibt, anschließend werden die divs in einer Schleife erzeugt und angehängt
+function getKunden() {
+	// ajax ruft sql_loadkunden auf, welche eine SQL Abfrage macht und die Daten
+	// über ein JSON
+	// Objekt zurück gibt, anschließend werden die divs in einer Schleife
+	// erzeugt und angehängt
 	$
 			.ajax({
 				type : "POST",
@@ -8,7 +10,8 @@
 				dataType : "json",
 
 				success : function(data) {
-
+					//leeren des Divs für dynamisches nachladen
+					$("#listendiv").empty();
 					for (var i = 0; i < data.length; i++) {
 
 						var div = '<div class="row kundenliste"><div class="col-xs-2"> <img src="'
@@ -33,8 +36,13 @@
 				}
 			});
 
-})();
+}
 
+// Dynamisch alle 10 Sekunden die Kundenliste erneuern
+$(document).ready(function() {
+	getKunden();
+	setInterval(getKunden, 10000);
+});
 
 // weitergabe der Kundennummer an Beratungsansicht via Buttonclick
 // Falls bereits ein Beratungsgespräch im Gange ist kommt ein Popup, dass man

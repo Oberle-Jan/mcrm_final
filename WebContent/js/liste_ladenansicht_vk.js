@@ -1,4 +1,4 @@
-(function() {
+function getVK() {
 	//ajax ruft sql_loadvk auf, welche eine SQL Abfrage macht und die Daten über ein JSON 
 	//Objekt zurück gibt, anschließend werden die divs in einer Schleife erzeugt und angehängt
 	$
@@ -8,7 +8,8 @@
 				dataType : "json",
 			
 				success : function(data) {
-
+					//leeren des Divs für dynamisches nachladen
+					$("#verkaeuferVerfuegbar").empty();
 					for (var i = 0; i < data.length; i++) {
 
 						var div = '<div class="col-xs-2"><div class="row" > <img src="'
@@ -23,4 +24,10 @@
 				}
 			});
 
-})();
+}
+
+//Dynamisch alle 10 Sekunden die Kundenliste erneuern
+$(document).ready(function() {
+	getVK();
+	setInterval(getVK, 10000);
+});
